@@ -1,0 +1,10 @@
+<!--index.wxml-->
+<view class="weather-wrapper">
+  <view class="location-wrapper">
+    <view class="location">{{ location }}</view>
+  </view>
+  <view class="weather-info"></view>
+</view>
+<view class="weather-bg">
+  <image src="{{ weatherPic }}" mode="scaleToFill"></image>
+</view>
