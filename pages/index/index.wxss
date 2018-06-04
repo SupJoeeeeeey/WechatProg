@@ -11,3 +11,35 @@
   position:relative;
   text-align:center;
 }
+
+.location{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.location-icon{
+  margin-right: 10rpx;
+  width: 21rpx;
+  height: 30rpx;
+}
+
+.weather-info{
+  position: relative;
+  top:250rpx;
+}
+
+.weather-temp{
+  font-size:60rpx;
+  line-height: 84rpx;
+}
+
+.weather-detail{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.weather-icon{
+  height:90rpx;
+  width:90rpx;
+}
