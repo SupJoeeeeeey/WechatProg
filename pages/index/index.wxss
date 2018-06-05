@@ -26,12 +26,13 @@
 
 .weather-info{
   position: relative;
-  top:250rpx;
+  top:220rpx;
 }
 
 .weather-temp{
-  font-size:60rpx;
-  line-height: 84rpx;
+  font-size:120rpx;
+  line-height: 168rpx;
+  margin-bottom: 10rpx;
 }
 
 .weather-detail{
@@ -39,6 +40,7 @@
   justify-content: center;
   align-items: center;
 }
+
 .weather-icon{
   height:90rpx;
   width:90rpx;
