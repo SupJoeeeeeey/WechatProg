@@ -12,6 +12,14 @@ Page({
   },
   //事件处理函数
   onLoad: function () {
-
+    wx.request({
+      url: 'https://test-miniprogram.com/api/weather/now',
+      data: {
+        city: '上海市'
+      },
+      success: res=>{
+        console.log(res.data.result)
+      }
+    })
   }
 })
