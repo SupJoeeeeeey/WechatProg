@@ -2,24 +2,85 @@
 //获取应用实例
 const app = getApp()
 
+let QQMapWx = require('qqmap-wx-jssdk.js')
+let map = new QQMapWx({
+  key: "DVDBZ-KY6LK-QPIJF-ACQ4R-SIFLK-6RFKD"
+})
+
+const weatherMap = {
+  "阴" : "",
+  "多云" : "",
+  "晴" : "",
+  "" : ""
+}
+
 Page({
   data: {
-    location: "广州市",
+    location: "上海",
     weatherPic: "../../images/cloudy-bg.png",
     temp: "17℃",
     detail:"晴天",
-    weatherIcon: "../../images/sunny-icon.png"
+    weatherIcon: "../../images/晴.png"
   },
   //事件处理函数
   onLoad: function () {
-    wx.request({
-      url: 'https://test-miniprogram.com/api/weather/now',
-      data: {
-        city: '上海市'
-      },
-      success: res=>{
-        console.log(res.data.result)
+    wx.getLocation({
+      success: res => {
+        console.log(res)
+        map.reverseGeocoder({
+          location: {
+            latitude: res.latitude,
+            longitude: res.longitude
+          },
+          success: res => {
+            this.setData({
+              location: res.result.address_component.city.replace("市", "")
+            })
+          },
+          fail: function(){
+            this.setData({
+              location: "北京"
+            })
+          }
+        })
       }
     })
+    this.setTemp()
+    this.setForecast()
+  },
+  setTemp: function(){
+    wx.request({
+      url: 'http://api.k780.com',
+      data: {
+        app: "weather.today",
+        weaid: this.data.location,
+        appkey: "34189",
+        sign: "00a9dc0ce3a80506ee73f982df8b59db",
+        format: "json"
+      },
+      success: res => {
+        this.setData({
+          temp: res.data.result.temp_curr + "℃",
+          detail: res.data.result.weather_curr,
+          weatherIcon: "../../images/" + res.data.result.weather_curr + ".png"
+        })
+        console.log(res)
+      }
+    })
+  },
+  setForecast: function(){
+    // wx.request({
+    //   url: 'https://www.sojson.com/open/api/weather/json.shtml',
+    //   data: {
+    //     city: '上海市'
+    //   },
+    //   success: res => {
+    //     this.setData({
+    //       temp: res.data.data.wendu + "℃"
+    //     })
+    //     console.log(res)
+    //   }
+    // })
+    console.log("ok")
   }
 })

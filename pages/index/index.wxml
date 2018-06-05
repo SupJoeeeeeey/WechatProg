@@ -9,6 +9,7 @@
   <view class="weather-info">
     <view class="weather-temp">{{ temp }}</view>
     <view class="weather-detail">
+      <image src="{{weatherIcon}}" class="weather-icon"></image>
       <view class="weather-name">{{ detail }}</view>
     </view>
   </view>

@@ -12,6 +12,11 @@
   text-align:center;
 }
 
+.location-wrapper{
+  position:relative;
+  margin-top:50rpx;
+}
+
 .location{
   display: flex;
   align-items: center;
@@ -26,12 +31,12 @@
 
 .weather-info{
   position: relative;
-  top:220rpx;
+  top:150rpx;
 }
 
 .weather-temp{
-  font-size:120rpx;
-  line-height: 168rpx;
+  font-size:150rpx;
+  line-height: 210rpx;
   margin-bottom: 10rpx;
 }
 
@@ -42,6 +47,7 @@
 }
 
 .weather-icon{
-  height:90rpx;
-  width:90rpx;
+  height:63rpx;
+  width:63rpx;
+  margin-right:10rpx;
 }
