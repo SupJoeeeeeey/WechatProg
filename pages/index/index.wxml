@@ -13,11 +13,14 @@
       <view class="weather-name">{{ detail }}</view>
     </view>
   </view>
-</view>
-<view class="weather-bg">
-  <image src="{{ weatherPic }}" mode="scaleToFill"></image>
+    <image class="weather-bg" src="{{ weatherPic }}" mode="scaleToFill"></image>
 </view>
 
+<view class="forecast">
+<view class="forecast-header">
+ <image class="title-icon" src="../../images/time-icon.png" mode="scaleToFill"></image> 
+ <view class="title-text">未来7天天气预报</view>
+</view>
 <scroll-view scroll-x>
 <view class="forecast-wrapper">
   <view class="weather-forecast" wx:for="{{ forecasts }}" wx:for-item="forecast">
@@ -27,3 +30,4 @@
   </view>
 </view>
 </scroll-view>
+</view>

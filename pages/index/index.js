@@ -83,7 +83,7 @@ Page({
           let data = {
             date: index === 0?"今天":item.week,
             icon: "../../images/" + "晴" + ".png",
-            temp: item.temperature
+            temp: item.temperature.replace("/","~")
           }
           arr.push(data)
         })
