@@ -17,3 +17,13 @@
 <view class="weather-bg">
   <image src="{{ weatherPic }}" mode="scaleToFill"></image>
 </view>
+
+<scroll-view scroll-x>
+<view class="forecast-wrapper">
+  <view class="weather-forecast" wx:for="{{ forecasts }}" wx:for-item="forecast">
+    <view class="forecast-date">{{ forecast.date }}</view>
+    <view class="forecast-temp">{{ forecast.temp }}</view>
+    <image class="forecast-icon" mode="scaleToFill" src="{{ forecast.icon }}"></image>
+  </view>
+</view>
+</scroll-view>
