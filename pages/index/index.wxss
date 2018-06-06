@@ -73,8 +73,8 @@
   display: flex;
   position:relative;
   flex-shrink: 0;
-  margin-top: 30rpx;
-  height: 330rpx; 
+  padding-top: 30rpx;
+  height: 550rpx; 
   align-items: center;
   /* background-color: red; */
 }
@@ -89,7 +89,7 @@
 
 .forecast-date,
 .forecast-temp{
-  margin-bottom:50rpx;
+  margin-bottom:100rpx;
   font-size:40rpx;
   line-height:56rpx;
 }
