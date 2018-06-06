@@ -1,6 +1,6 @@
 .weather-bg{
-  width:750rpx;
-  height:750rpx;
+  width:100%;
+  height:550rpx;
   z-index:-1;
   position:absolute;
   top:0;
@@ -14,7 +14,7 @@
 
 .location-wrapper{
   position:relative;
-  margin-top:50rpx;
+  padding-top:50rpx;
 }
 
 .location{
@@ -31,7 +31,7 @@
 
 .weather-info{
   position: relative;
-  top:150rpx;
+  margin-top:150rpx;
 }
 
 .weather-temp{
@@ -41,6 +41,7 @@
 }
 
 .weather-detail{
+  position: relative;
   display:flex;
   justify-content: center;
   align-items: center;
@@ -50,4 +51,50 @@
   height:63rpx;
   width:63rpx;
   margin-right:10rpx;
+}
+
+.forecast{
+  position:relative;
+  margin-top: 50rpx;
+}
+
+.forecast-header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.title-icon{
+   margin-right: 10rpx;
+   width: 36rpx;
+   height: 28rpx;
+}
+
+.forecast-wrapper{
+  display: flex;
+  position:relative;
+  flex-shrink: 0;
+  padding-top: 30rpx;
+  height: 550rpx; 
+  align-items: center;
+  /* background-color: red; */
+}
+
+.weather-forecast{
+  display: flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  margin-right:50rpx;
+}
+
+.forecast-date,
+.forecast-temp{
+  margin-bottom:100rpx;
+  font-size:40rpx;
+  line-height:56rpx;
+}
+
+.forecast-icon{
+  height:63rpx;
+  width:63rpx;
 }
