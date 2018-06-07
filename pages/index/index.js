@@ -50,17 +50,26 @@ Page({
   },
   //事件处理函数
   onLoad: function () {
+    wx.request({
+      url: 'https://api.k780.com',
+      success: res => {
+
+      }
+    }),
     wx.getLocation({
       success: res => {
+        console.log(res)
         map.reverseGeocoder({
           location: {
             latitude: res.latitude,
             longitude: res.longitude
           },
           success: res => {
+            console.log(res)
             this.setData({
               location: res.result.address_component.city.replace("市", "")
             })
+            this.setTemp()
           },
           fail: function(){
             this.setData({
@@ -68,9 +77,11 @@ Page({
             })
           }
         })
+      },
+      fail: function(){
+        console.log("get location failed.")
       }
     })
-    this.setTemp()
   },
   onPullDownRefresh: function(){
     this.setTemp(function(){
@@ -79,7 +90,7 @@ Page({
   },
   setTemp: function(cb){
     wx.request({
-      url: 'http://api.k780.com',
+      url: 'https://api.k780.com',
       data: {
         app: "weather.today",
         weaid: this.data.location,
@@ -88,6 +99,7 @@ Page({
         format: "json"
       },
       success: res => {
+        console.log(res)
         let weather = weatherMap[res.data.result.weather_curr]
         console.log(weather)
         if(weather === null || weather === ""){
@@ -100,12 +112,15 @@ Page({
           weatherPic: "../../images/" + weather + ".png"
         })
         this.setForecast(cb)
+      },
+      fail: function(){
+        console.log("failed")
       }
     })
   },
   setForecast: function(cb){
     wx.request({
-      url: 'http://api.k780.com',
+      url: 'https://api.k780.com',
       data: {
         app: "weather.future",
         weaid: this.data.location,
@@ -114,6 +129,7 @@ Page({
         format: "json"
       },
       success: res => {
+        console.log(res)
         let arr = []
         res.data.result.forEach(function(item, index){
           let data = {
