@@ -55,7 +55,8 @@
 
 .forecast{
   position:relative;
-  margin-top: 50rpx;
+  padding-top: 50rpx;
+  background-color: #f5e3fc;
 }
 
 .forecast-header{

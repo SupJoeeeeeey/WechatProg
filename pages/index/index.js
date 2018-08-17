@@ -50,15 +50,12 @@ Page({
   },
   setTemp: function(){
     wx.request({
-      url: 'http://api.k780.com',
+      url: 'https://supjoey.xyz/weather',
       data: {
-        app: "weather.today",
-        weaid: this.data.location,
-        appkey: "34189",
-        sign: "00a9dc0ce3a80506ee73f982df8b59db",
-        format: "json"
+        location:this.data.location
       },
       success: res => {
+        console.log(res)
         this.setData({
           temp: res.data.result.temp_curr + "℃",
           detail: res.data.result.weather_curr,
@@ -69,13 +66,9 @@ Page({
   },
   setForecast: function(){
     wx.request({
-      url: 'http://api.k780.com',
+      url: 'https://supjoey.xyz/futureweather',
       data: {
-        app: "weather.future",
-        weaid: this.data.location,
-        appkey: "34189",
-        sign: "00a9dc0ce3a80506ee73f982df8b59db",
-        format: "json"
+        location: this.data.location
       },
       success: res => {
         let arr = []
