@@ -75,7 +75,7 @@
   position:relative;
   flex-shrink: 0;
   padding-top: 30rpx;
-  height: 550rpx; 
+  height: 600rpx; 
   align-items: center;
   /* background-color: red; */
 }

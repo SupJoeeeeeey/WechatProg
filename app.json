@@ -6,6 +6,7 @@
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#d9f2ff",
     "navigationBarTitleText": "天气小程序",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle":"black",
+    "enablePullDownRefresh": true
   }
 }
